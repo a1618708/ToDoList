@@ -45,6 +45,36 @@ padding-left:0!important;
     border-color: rgb(200, 35, 51);
 transition-duration: 0.15s;
 
+}
 
 
+
+#footer{
+position:absolute;
+bottom:0;
+text-align:center;
+font-family:'Work Sans';
+font-weight:500;
+font-size:1.2rem;
+width:100%;
+}
+
+#footer p{
+padding: 1% 0 ;
+}
+
+#footer p::after{
+content: " — "
+}
+
+.footer-img{
+width:4rem;
+font-size:2rem;
+border-color: transparent;
+margin:0 10px;
+}
+
+.footer-img:hover{
+border-color: transparent;
+background-color:#ceb98e;
 }
