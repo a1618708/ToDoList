@@ -1,0 +1,50 @@
+/*General UI*/
+body {
+font-family: 'Work Sans'!important;
+font-weight:500!important;
+position:relative;
+min-height:100vh;
+
+}
+
+.help-block{
+color:red!important;
+margin:0!important;
+}
+
+.list-head{
+margin:1rem 0 0 3rem;
+
+}
+
+.left-column{
+padding-right:0!important;
+}
+
+.form-control{
+padding-right:0!important;
+}
+
+
+/* checkbox UI*/
+
+
+li{
+list-style-type: none;
+padding:0;
+font-size:30px!important;
+}
+
+ul{
+padding-left:0!important;
+}
+
+
+.form-check > input:checked  {
+    background-color: rgb(200, 35, 51);
+    border-color: rgb(200, 35, 51);
+transition-duration: 0.15s;
+
+
+
+}

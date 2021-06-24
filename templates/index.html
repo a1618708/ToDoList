@@ -1,0 +1,61 @@
+{% include "header.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+<div class="container list-head ">
+    <form method="post" role="form" novalidate>
+        {{ form.csrf_token }}
+        <div class="row">
+            <div class="col-md-6 left-column">
+                {% if not Is_log: %}
+                {{ wtf.form_field(form.name ) }}
+                {% endif %}
+                {{ wtf.form_field(form.text ) }}
+            </div>
+            <div class="col-md-2 d-flex flex-column justify-content-end">
+                {{ wtf.form_field(form.add, class='form-button btn btn-outline-success' ) }}
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-6">
+                {% for todo in list: %}
+                {% if todo !="" %}
+                {% if list.index(todo)<=15: %}
+                {% if todo not in checked_list: %}
+                <div class="form-check form-switch ">
+                    <input  class="form-check-input"  type="checkbox" id="check" name="check" value="{{list.index(todo)}}">
+                    <label  class="form-check-label"  for="check">{{todo}}</label>
+                </div>
+                {% else: %}
+                <div class="form-check form-switch ">
+                    <input class="form-check-input"  type="checkbox" id="check" name="check" value="{{list.index(todo)}}" checked="checked">
+                    <label class="form-check-label" for="check" class="item">{{todo}}</label>
+                </div>
+
+
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </form>
+    <br>
+    {% with messages = get_flashed_messages() %}
+    {% if messages: %}
+    {% for message in messages: %}
+    <p class="help-block">{{ message }}</p>
+    {% endfor %}
+    {% else: %}
+    <br>
+    {% endif %}
+    {% endwith %}
+
+</div>
+
+</body>
+</html>
